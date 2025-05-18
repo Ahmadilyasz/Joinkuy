@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mau Join Ga? </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    
+
+    <div class="container">
+
+        <div class="logo-container">
+
+            <div class="logo" id="logo-1">
+
+                <div class="bot bot-1"></div>
+
+            </div>
+
+            <div class="logo" id="logo-2">
+
+                <div class="bot bot-2"></div>
+
+            </div>
+
+            <div class="logo" id="logo-3">
+
+                <div class="bot bot-3"></div>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="login-container">
+
+            <h1>
+            Ryuji Family</h1>
+
+           <form id="login-form">
+  <div class="input-group">
+    <input type="text" id="namaRp" required autocomplete="off">
+    <label for="namaRp">Nama Roleplay</label>
+    <div class="input-highlight"></div>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="namaAsli" required autocomplete="off">
+    <label for="namaAsli">Nama Asli</label>
+    <div class="input-highlight"></div>
+  </div>
+
+  <div class="input-group">
+    <input type="number" id="umurRp" required autocomplete="off">
+    <label for="umurRp">Umur Roleplay</label>
+    <div class="input-highlight"></div>
+  </div>
+
+  <div class="input-group">
+    <select id="genderAsli" required>
+      <option value="" disabled selected></option>
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select>
+    <label for="genderAsli">Gender Asli</label>
+    <div class="input-highlight"></div>
+  </div>
+
+  <div class="input-group">
+    <select id="genderRp" required>
+      <option value="" disabled selected></option>
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select>
+    <label for="genderRp">Gender Roleplay</label>
+    <div class="input-highlight"></div>
+  </div>
+
+  <button type="submit" class="login-button">
+    <span>Kirim</span>
+    <div class="button-effect"></div>
+  </button>
+</form>
+
+
+            <div class="register-container" id="register-form" style="display: none;">
+
+                <h2>Yeni Hesap Oluştur</h2>
+
+                <form id="signup-form">
+
+                    <div class="input-group">
+
+                        <input type="text" id="new-username" required autocomplete="off">
+
+                        <label for="new-username">Kullanıcı Adı</label>
+
+                        <div class="input-highlight"></div>
+
+                    </div>
+
+                    
+
+                    <div class="input-group">
+
+                        <input type="email" id="email" required autocomplete="off">
+
+                        <label for="email">E-posta</label>
+
+                        <div class="input-highlight"></div>
+
+                    </div>
+
+                    
+
+                    <div class="input-group">
+
+                        <input type="password" id="new-password" required autocomplete="off">
+
+                        <label for="new-password">Şifre</label>
+
+                        <div class="input-highlight"></div>
+
+                    </div>
+
+                    
+
+                    <div class="input-group">
+
+                        <input type="password" id="confirm-password" required autocomplete="off">
+
+                        <label for="confirm-password">Şifreyi Tekrarla</label>
+
+                        <div class="input-highlight"></div>
+
+                    </div>
+
+                    
+
+                    <button type="submit" class="login-button register-button">
+
+                        <span>Hesap Oluştur</span>
+
+                        <div class="button-effect"></div>
+
+                    </button>
+
+                </form>
+
+                <div class="back-option">
+
+                    <a href="#" id="back-to-login" class="option">Giriş Sayfasına Dön</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="musicPlayerWindow">
+  <div class="window-header" id="dragHandle">
+    <span>Sedap Nih</span>
+    <button id="toggleBtn">–</button>
+  </div>
+  <div class="window-body" id="playerBody">
+    <audio id="audioPlayer" loop></audio>
+    <ul id="playlist">
+      <li data-src="music/Music1.mp3">People - Libian</li>
+      <li data-src="music/Music2.mp3">Blue - Yung Kai</li>
+      <li data-src="music/Music3.mp3">News Jeans - News Jeans</li>
+      <li data-src="music/Music4.mp3">Dancing - Krono Remix Aaron Smith,Luvli,Krono </li>
+      <li data-src="music/Music5.mp3">Night dancer - imase</li>
+      <li data-src="music/Music6.mp3">Wild side (From "Beastars") - CyYu</li>
+      <li data-src="music/Music7.mp3">Smile - Lily Allen</li>
+      <li data-src="music/Music8.mp3">My Ordinary Life - The Living Tombstone</li>
+      <li data-src="music/Music9.mp3">Bang Bang - K'NAAN, Adam Levine</li>
+      <li data-src="music/Music10.mp3">It's Been So Long - The Living Tombstone</li>
+      <li data-src="music/Music11.mp3">Take Me Home, Country Roads - John Denver</li>
+      <li data-src="music/Music12.mp3">World's Smallest Violin - AJR</li>
+      <li data-src="music/Music13.mp3">Ransom - Lil Tecca</li>
+      <li data-src="music/Music14.mp3">The Lazy Song - Bruno Mars</li>
+      <li data-src="music/Music15.mp3">Terpikat Senyummu - Idgitaf</li>
+      <li data-src="music/Music16.mp3">Lampu Merah - The Lantis</li>
+      <li data-src="music/Music17.mp3">Denting - Petra Sihombing</li>
+      <li data-src="music/Music18.mp3">To the Bone - Pamungkas</li>
+      <li data-src="music/Music19.mp3">Rumah ke rumah - Hindia</li>
+      <li data-src="music/Music20.mp3">Duka - Last Child</li>
+      <li data-src="music/Music21.mp3">Bunga Maaf - The Lantis</li>
+      <li data-src="music/Music22.mp3">Komang - Raim Laode</li>
+      <li data-src="music/Music23.mp3">Dan... - Sheila On 7</li>
+      <li data-src="music/Music24.mp3">Jiwa Yang Bersedih - Ghea Indrawari</li>
+      <li data-src="music/Music25.mp3">Sempurna - Andra & The Backbone</li>
+      <li data-src="music/Music26.mp3">Asmalibrasi - Soegi Bornean</li>
+      <li data-src="music/Music27.mp3">It's You - Ali Gatie</li>
+      <li data-src="music/Music28.mp3">Love For You - Lovely Lori & ovg!</li>
+      <li data-src="music/Music29.mp3">Jedagjedug - Zachz Winner</li>
+      <li data-src="music/Music30.mp3">Flying - Tom Odell</li>
+      <li data-src="music/Music31.mp3">Bohemian Rhapsody - Queen</li>
+      <li data-src="music/Music32.mp3">505 - Arctic Monkey</li>
+      <li data-src="music/Music33.mp3">I Wanna Be Yours - Arctic Monkey</li>
+      <li data-src="music/Music34.mp3">Sweater Weather - Neighbourhood</li>
+      <li data-src="music/Music35.mp3">It Will Rain - Bruno Mars</li>
+      <li data-src="music/Music36.mp3">Line Without A Hook - Ricky Montgomery</li>
+      <li data-src="music/Music37.mp3">About You - 1975</li>
+      <li data-src="music/Music38.mp3">Freaks - Surf Curse</li>
+      <li data-src="music/Music39.mp3">Id Rather Pretend - Bryant Barnes</li>
+      <li data-src="music/Music40.mp3">Mind Games - Sidkick</li>
+      <li data-src="music/Music41.mp3">Thoses Eyes - New West</li>
+      <li data-src="music/Music42.mp3">One Last Time - Ariana Grande</li>
+      <li data-src="music/Music43.mp3">South of The Border - Ed Sheeran</li>
+      <li data-src="music/Music44.mp3">Happy Now - Zeld</li>
+      <li data-src="music/Music45.mp3">I Ain't Worried - One Republiv</li>
+      <li data-src="music/Music46.mp3">So Low - shiloh Dinasty</li>
+      <li data-src="music/Music47.mp3">Masa Lalumu</li>
+      <li data-src="music/Music48.mp3">Masa Depanmu</li>
+      <li data-src="music/Music49.mp3">Penjaga Hati</li>
+      <li data-src="music/Music50.mp3">Tresno Liyane X Drill</li>
+      <li data-src="music/Music51.mp3">Garam Dan Madu X Drill 1</li>
+      <li data-src="music/Music52.mp3">Garam Dan Madu X Drill 2</li>
+      <li data-src="music/Music53.mp3">Kasih Aba-aba</li>
+      <li data-src="music/Music54.mp3">With You - Fian</li>
+      <li data-src="music/Music55.mp3">Last Girl - Fian</li>
+      <li data-src="music/Music56.mp3">Could You Be My Girl - Fian</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tombol bulat seperti WhatsApp -->
+<div id="minimizedBubble" style="display: none;">♫</div>
+</div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
+            
